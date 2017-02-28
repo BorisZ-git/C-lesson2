@@ -16,7 +16,7 @@ namespace test2
             int b = UserValue("Введите второе число: ");
             int c = UserValue("Введите трерье число: ");
             //Show the min(показать минимальное)
-            Console.WriteLine(ShowMin(a,b,c));
+            Console.WriteLine($"Минимальное число: {ShowMin(a, b, c)}" );
             //Pause
             Console.ReadLine();
         }
