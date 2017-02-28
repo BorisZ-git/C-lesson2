@@ -20,19 +20,18 @@ namespace test2
             //Pause
             Console.ReadLine();
         }
+        //Realize method return value(Реализация метода возвращающего значение)
         static int UserValue(string msg)
         {
             Console.Write(msg);
             return int.Parse(Console.ReadLine());
         }
+        //Realize method show min value(Реализация метода показывающего минимальное значение)
         static int ShowMin(int a, int b, int c)
         {
-
             if (a <= b && a <= c) return a;
             else if (b <= a && b <= c) return b;
             else return c;
-
-
         }
     }
 }
