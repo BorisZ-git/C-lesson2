@@ -15,11 +15,22 @@ namespace test2
             int a = UserValue("Введите первое число: ");
             int b = UserValue("Введите второе число: ");
             int c = UserValue("Введите трерье число: ");
+            //Show the min(показать минимальное)
+            Console.WriteLine(ShowMin(a,b,c));
+            //Pause
+            Console.ReadLine();
         }
         static int UserValue(string msg)
         {
             Console.Write(msg);
             return int.Parse(Console.ReadLine());
+        }
+        static int ShowMin(int a, int b, int c)
+        {
+            if (a < b && a < c) return a;
+            else if (b < a && b < c) return b;
+            else if (c < a && c < b) return c;
+            else return 100;
         }
     }
 }
