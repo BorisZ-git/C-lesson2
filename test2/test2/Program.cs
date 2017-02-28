@@ -9,7 +9,13 @@ namespace test2
     {
         static void Main()
         {
-            
+            //Hello(Привет)
+            Console.WriteLine("Привет! Эта программа возвращает минимальное из трех чисел!");
+            //Records variables(запись переменных)
+            int a = int.Parse(Console.ReadLine());
+            int b = int.Parse(Console.ReadLine());
+            int c = int.Parse(Console.ReadLine());
+
         }
     }
 }
