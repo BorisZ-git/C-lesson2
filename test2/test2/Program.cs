@@ -12,10 +12,14 @@ namespace test2
             //Hello(Привет)
             Console.WriteLine("Привет! Эта программа возвращает минимальное из трех чисел!");
             //Records variables(запись переменных)
-            int a = int.Parse(Console.ReadLine());
-            int b = int.Parse(Console.ReadLine());
-            int c = int.Parse(Console.ReadLine());
-
+            int a = UserValue("Введите первое число: ");
+            int b = UserValue("Введите второе число: ");
+            int c = UserValue("Введите трерье число: ");
+        }
+        static int UserValue(string msg)
+        {
+            Console.Write(msg);
+            return int.Parse(Console.ReadLine());
         }
     }
 }
