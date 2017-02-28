@@ -12,22 +12,22 @@ namespace HW2
             //Hello(Привет)
             Console.WriteLine("Привет! Эта программа реализует метод подсчета количества цифр числа!");
             //Records variables(запись переменных)
-            int a = UserValue("Введите первое число: ");
+            string a = UserValue("Введите число: ");
             //Show the min(показать минимальное)
-            Console.WriteLine($"Количество цифл числа: {ShowLenght(a)}");
+            Console.WriteLine($"Количество цифл числа: {ShowLength(a)}");
             //Pause
             Console.ReadLine();
-
         }
-        static int UserValue(string msg)
+        //Realize method return value of string(Возвращает строковое значение)
+        static string UserValue(string msg)
         {
             Console.Write(msg);
-            return int.Parse(Console.ReadLine());
+            return Console.ReadLine();
         }
-        static int ShowLenght(int a)
+        //Realize method return Lenght of string that the give to method (Возвращает число знаков)
+        static int ShowLength(string a)
         {
-            int Lenght = 100;
-            return Lenght;
+            return a.Length;
         }
 
     }
