@@ -28,7 +28,7 @@ namespace HW3
             do
             {
                 Console.Write("Введите число: ");
-                UserNumber = int.Parse(Console.ReadLine());
+                `UserNumber = int.Parse(Console.ReadLine());
                 if (UserNumber > 0 && UserNumber%2 !=0)
                 {
                     sum += UserNumber;

@@ -15,6 +15,28 @@ namespace HW4
         static void Main()
         {
 
+
+            //Hello
+            Console.WriteLine("Добрый день!");
+            //records valuable
+            Console.Write("Введите ваш логин: "); string UserLogin = Console.ReadLine();
+            Console.Write("Введите ваш пароль: "); string UserPass = Console.ReadLine();
+            //check
+            Console.WriteLine(TrueFalse(UserLogin, UserPass));
+            Console.ReadLine();
+            //GoStop
+            if (TrueFalse(UserLogin, UserPass)) Console.WriteLine("Проходи");
+            else if (TrueFalse(UserLogin, UserPass) == false) Console.WriteLine("Стоп");
+        }
+        static bool TrueFalse(string UserLogin, string UserPass)
+        {
+            //set login and pass
+            string login = "login";
+            string pass = "pass";
+            //check
+            if (UserLogin == login && UserPass == pass) return true;
+            else return false;
+            
         }
     }
 }
