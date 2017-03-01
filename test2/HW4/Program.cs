@@ -27,6 +27,17 @@ namespace HW4
             //GoStop
             if (TrueFalse(UserLogin, UserPass)) Console.WriteLine("Проходи");
             else if (TrueFalse(UserLogin, UserPass) == false) Console.WriteLine("Стоп");
+            //cycle
+            int i = 0;
+            do
+            {
+                Console.Write("Введите ваш логин: "); string UserLogin2 = Console.ReadLine();
+                Console.Write("Введите ваш пароль: "); string UserPass2 = Console.ReadLine();
+                //check
+                Console.WriteLine(TrueFalse(UserLogin2, UserPass2));
+                i++;
+            } while (i != 3);
+            
         }
         static bool TrueFalse(string UserLogin, string UserPass)
         {
