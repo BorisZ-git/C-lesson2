@@ -24,12 +24,13 @@ namespace HW3
             int sum = 0;
             do
             {
+                Console.Write("Введите число: ");
                 UserNumber = int.Parse(Console.ReadLine());
                 if (UserNumber > 0 && UserNumber%2 !=0)
                 {
                     sum += UserNumber;
                 }
-            } while (UserNumber == 0);            
+            } while (UserNumber != 0);            
             return sum;
     }
 
