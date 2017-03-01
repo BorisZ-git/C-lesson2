@@ -10,18 +10,21 @@ namespace HW3
     {
         static void Main()
         {
-            //Hello
+            //Hello(Привет)
             Console.WriteLine("Добрый день! Эта программа подсчитает сумму всех\n" + 
                 "нечетных положительных чисел, пока Вы не введете 0");
-            //operation
+            //Realize(Реализация программы)
             Console.WriteLine(DoWhileZero());
-            //Pause
+            //Pause(Пауза)
             Console.ReadLine();
         }
+        //Write method that return sum(Пишем метод который возвращает сумму)
     static int DoWhileZero()
         {
             int UserNumber;
             int sum = 0;
+            //Use division for catch odd numbers
+            //(Используем деление по модулю для ловли нечетных чисел)
             do
             {
                 Console.Write("Введите число: ");
