@@ -16,6 +16,27 @@ namespace HW6
     {
         static void Main()
         {
+            DateTime start = DateTime.Now;
+            //int count1 = 39%10; // получаем последнюю цифру
+            //int count2 = (39 / 10) % 10; // получаем предпоследнюю в данном примере первую цифру
+            //int count3 = (3934 / 10) % 10; //
+            int a = 39347;
+            int b = 0;
+            do
+            {                
+                b = b + (a % 10);
+                a = a/10 ;
+            } while (a >= 1);
+            //for (int i = 0; i < 1000;i++)
+            //{                
+            //    if (i%10 == 0)
+            //    {
+            //        count++;
+            //    }
+            //}
+            Console.WriteLine(b);
+            Console.WriteLine(DateTime.Now - start);            
+            Console.ReadLine();
 
         }
     }
