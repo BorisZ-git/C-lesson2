@@ -17,27 +17,50 @@ namespace HW5
         {
             //Hello
             Console.WriteLine("Привет! Это программа поможет Вам узнать в норме ли ваши жиры");
+
             #region 5.1
+
             //recodrs value
             Console.Write("Введите ваш рост: "); double hight = double.Parse(Console.ReadLine());
             Console.Write("Введите ваш вес: "); double weight = double.Parse(Console.ReadLine());
             //get IMT(получаем индекс массы тела)
-            double IMT = CountIMT(hight,weight);
-            Console.WriteLine(WhatNeed(IMT));
+            double IMT = CountIMT(hight,weight);            
+            Console.Write(WhatNeed(IMT)); Console.WriteLine($" Твой ИМТ: {IMT:f1}");
+            //Pause
+            Console.ReadLine();
+            //realize exit if everything is ok
+            if (IMT > 18.5 && IMT <= 24.99) return;
+
             #endregion
 
             #region 5.2
+
             //Count for Normalization
-            Console.WriteLine(HowMuchNeed());
+            if (IMT < 18.5)
+            {
+                Console.Write("Вам нужно набрать: ");
+                HowMuchNeed(hight, weight);
+                Console.Write(" кг");
+            }
+            else
+            {
+                Console.Write("Вам нужно сбросить: ");
+                HowMuchNeed(hight, weight);
+                Console.Write(" кг");
+            }
+            
             #endregion
+
             //Pause
             Console.ReadLine();
 
         }
+        //method for count IMT (метод для подсчета ИМТ)
         static double CountIMT (double h, double w)
         {
             return w / (h / 100 * h / 100);
         }
+        //method for position determination (метод для понятия положения в таблице)
         static string WhatNeed (double IMT)
         {
             if (IMT <= 16) return "У меня пальцы больше чем твоя ляха скелет";
@@ -48,9 +71,14 @@ namespace HW5
             if (IMT >= 35 && IMT < 40) return "Тебе нужно срочно заняться собой";
             else return "Что ты такое? Давай занимайся собой животное";
         }
-        static string HowMuchNeed (double h, double w)
+        //method for count how much need = (метод для подсчета количества лишнего или нужного веса)
+        static void HowMuchNeed (double h, double w)
         {
-
+            double imt = CountIMT(h, w);
+            int sum = 0;
+            if (imt <= 18.5) for (; imt <= 18.5; sum++, w++) imt = CountIMT(h, w);                
+            else if (imt > 24.5) for (; imt > 24.5; sum++,w--) imt = CountIMT(h, w);
+            Console.WriteLine(sum);            
         }
     }
 }
