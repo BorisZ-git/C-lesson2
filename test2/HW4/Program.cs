@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 /* Boris Z
  * Реализовать метод проверки логина и пароля.
  *  На вход подается логин и пароль.
@@ -12,42 +13,37 @@ namespace HW4
 {
     class Program
     {
+        //set login and pass(устанавливаем логин и пароль)
+        static string login = "login";
+        static string pass = "pass";
         static void Main()
         {
 
 
-            //Hello
+            //Hello (Привет)
             Console.WriteLine("Добрый день!");
-            //records valuable
-            Console.Write("Введите ваш логин: "); string UserLogin = Console.ReadLine();
-            Console.Write("Введите ваш пароль: "); string UserPass = Console.ReadLine();
-            //check
-            Console.WriteLine(TrueFalse(UserLogin, UserPass));
-            Console.ReadLine();
-            //GoStop
-            if (TrueFalse(UserLogin, UserPass)) Console.WriteLine("Проходи");
-            else if (TrueFalse(UserLogin, UserPass) == false) Console.WriteLine("Стоп");
-            //cycle
+            //Check  (инициализируем проверку на логин и пароль)
             int i = 0;
             do
             {
-                Console.Write("Введите ваш логин: "); string UserLogin2 = Console.ReadLine();
-                Console.Write("Введите ваш пароль: "); string UserPass2 = Console.ReadLine();
-                //check
-                Console.WriteLine(TrueFalse(UserLogin2, UserPass2));
-                i++;
-            } while (i != 3);
-            
+                Console.Write("Введите ваш логин: "); string UserLogin = Console.ReadLine();
+                Console.Write("Введите ваш пароль: "); string UserPass = Console.ReadLine();                
+                if (TrueFalse(UserLogin, UserPass)) break;
+                else i++;
+                //return work only in Main, alternative Environment.Exit(0);
+                //ретерн закрывает только функцию, альтернатива ему закрывает программу.
+                if (i == 3) return;
+            } while (true) ;
+            //Go (Идем дальше)
+            Console.WriteLine("Вы успешно прошли авторизацию!");
+            //Pause (Пауза)
+            Console.ReadLine();
         }
         static bool TrueFalse(string UserLogin, string UserPass)
-        {
-            //set login and pass
-            string login = "login";
-            string pass = "pass";
-            //check
+        {            
+            //check (Проверяем введенные данные с установленными)
             if (UserLogin == login && UserPass == pass) return true;
-            else return false;
-            
+            else return false;            
         }
     }
 }
