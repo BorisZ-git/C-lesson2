@@ -19,18 +19,24 @@ namespace HW5
             Console.WriteLine("Привет! Это программа поможет Вам узнать в норме ли ваши жиры");
             #region 5.1
             //recodrs value
-            Console.Write("Введите ваш рост: "); double h = double.Parse(Console.ReadLine());
-            Console.Write("Введите ваш вес: "); double w = double.Parse(Console.ReadLine());
+            Console.Write("Введите ваш рост: "); double hight = double.Parse(Console.ReadLine());
+            Console.Write("Введите ваш вес: "); double weight = double.Parse(Console.ReadLine());
             //get IMT(получаем индекс массы тела)
-            double IMT = w/(h/100*h/100);
+            double IMT = CountIMT(hight,weight);
             Console.WriteLine(WhatNeed(IMT));
             #endregion
 
             #region 5.2
-
+            //Count for Normalization
+            Console.WriteLine(HowMuchNeed());
             #endregion
+            //Pause
             Console.ReadLine();
 
+        }
+        static double CountIMT (double h, double w)
+        {
+            return w / (h / 100 * h / 100);
         }
         static string WhatNeed (double IMT)
         {
@@ -41,6 +47,10 @@ namespace HW5
             if (IMT >= 30 && IMT < 35) return "Ты колобок завязывай с пивом на диванчике";
             if (IMT >= 35 && IMT < 40) return "Тебе нужно срочно заняться собой";
             else return "Что ты такое? Давай занимайся собой животное";
+        }
+        static string HowMuchNeed (double h, double w)
+        {
+
         }
     }
 }
