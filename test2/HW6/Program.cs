@@ -20,6 +20,9 @@ namespace HW6
             //int count1 = 39%10; // получаем последнюю цифру
             //int count2 = (39 / 10) % 10; // получаем предпоследнюю в данном примере первую цифру
             //int count3 = (3934 / 10) % 10; //
+
+
+            #region it's sum of value
             int a = 39347;
             int b = 0;
             do
@@ -27,6 +30,9 @@ namespace HW6
                 b = b + (a % 10);
                 a = a/10 ;
             } while (a >= 1);
+            #endregion
+
+
             //for (int i = 0; i < 1000;i++)
             //{                
             //    if (i%10 == 0)
