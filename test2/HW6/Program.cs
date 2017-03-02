@@ -16,33 +16,33 @@ namespace HW6
     {
         static void Main()
         {
+            //record time (записать текущие время)
             DateTime start = DateTime.Now;
-            //int count1 = 39%10; // получаем последнюю цифру
-            //int count2 = (39 / 10) % 10; // получаем предпоследнюю в данном примере первую цифру
-            //int count3 = (3934 / 10) % 10; //
-
-
-            #region it's sum of value
-            int a = 39347;
-            int b = 0;
-            do
-            {                
-                b = b + (a % 10);
-                a = a/10 ;
-            } while (a >= 1);
-            #endregion
-
-
-            //for (int i = 0; i < 1000;i++)
-            //{                
-            //    if (i%10 == 0)
-            //    {
-            //        count++;
-            //    }
-            //}
-            Console.WriteLine(b);
+            //get good numbers(получить хорошие числа)
+            int count = 0;
+            for (int i = 1; i <= 1000000; i++)
+            {
+                if (i%Sum(i) == 0)
+                {
+                    count++;
+                }
+            }
+            Console.WriteLine(count);            
             Console.WriteLine(DateTime.Now - start);            
             Console.ReadLine();
+        }
+        //int count1 = 39%10; // получаем последнюю цифру
+        //int count2 = (39 / 10) % 10; // получаем предпоследнюю в данном примере первую цифру
+        //реализуем цикл пока не получим все цифры
+        static int Sum(int i)
+        {
+            int b = 0;
+            do
+            {
+                b = b + (i % 10);
+                i = i / 10;
+            } while (i >= 1);
+            return b;
 
         }
     }
