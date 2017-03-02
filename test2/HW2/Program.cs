@@ -13,9 +13,9 @@ namespace HW2
             Console.WriteLine("Привет! Эта программа реализует метод подсчета количества цифр числа!");
             //Records variables(запись переменных)
             string a = UserValue("Введите число: ");
-            //Show the min(показать минимальное)
+            //Show the length(показать колво знаков)
             Console.WriteLine($"Количество цифл числа: {ShowLength(a)}");
-            //Pause
+            //Pause(пауза)
             Console.ReadLine();
         }
         //Realize method return value of string(Возвращает строковое значение)

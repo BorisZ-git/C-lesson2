@@ -8,8 +8,7 @@ using System.Linq;
  *     пользователь вводит логин и пароль, программа пропускает его  дальше или не пропускает.
  *      С помощью цикла do while ограничить ввод пароля тремя попытками; 
  *      */ 
-
-namespace HW4
+ namespace HW4
 {
     class Program
     {
@@ -18,8 +17,6 @@ namespace HW4
         static string pass = "pass";
         static void Main()
         {
-
-
             //Hello (Привет)
             Console.WriteLine("Добрый день!");
             //Check  (инициализируем проверку на логин и пароль)
