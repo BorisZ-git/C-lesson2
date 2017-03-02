@@ -78,7 +78,7 @@ namespace HW5
             int sum = 0;
             if (imt <= 18.5) for (; imt <= 18.5; sum++, w++) imt = CountIMT(h, w);                
             else if (imt > 24.5) for (; imt > 24.5; sum++,w--) imt = CountIMT(h, w);
-            Console.WriteLine(sum);            
+            Console.Write(sum);            
         }
     }
 }
